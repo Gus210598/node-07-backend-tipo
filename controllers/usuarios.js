@@ -80,16 +80,22 @@ const usuariosDelete = async(req = request, res = response ) => {
 
     const { id } = req.params;
 
+    // const uid = req.uid;
+
     // Fisicamente se borra
     // const usuario = await Usuario.findByIdAndDelete( id );
 
-    // Para evitar borrarlo fisicamente vamos a cambiar el estado
+    // Para No borrar fisicamente el registro vamos a cambiar el estado
     const usuario = await Usuario.findByIdAndUpdate( id, { estado: false });
+
+ 
 
     res.json({
         ok: true,
         msg: 'Usuario borrado | delete API',
-        id
+        usuario,
+
+        // uid,
     })
 }
    
