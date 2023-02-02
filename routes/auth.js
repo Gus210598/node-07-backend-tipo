@@ -1,3 +1,7 @@
+/** 
+*   {{url}}/api/auth
+**/
+
 const { Router } = require('express');
 const { check } = require('express-validator');
 
